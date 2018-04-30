@@ -1,0 +1,20 @@
+diff --git a/src/python/setup.py.tpl b/src/python/setup.py.tpl
+index bb73744..7196622 100644
+--- a/src/python/setup.py.tpl
++++ b/src/python/setup.py.tpl
+@@ -7,13 +7,14 @@ import sys
+ 
+ 
+ def find_path():
+-    lib_paths = [ os.path.abspath('@LIBRARY_OUTPUT_PATH@'), abspath(join(dirname(dirname(sys.argv[0])), '../../../lib')) ]
++    lib_paths = [ os.path.abspath(r'@LIBRARY_OUTPUT_PATH@'), abspath(join(dirname(dirname(sys.argv[0])), '../../../lib')) ]
+     possible_libs = ['libflann.so', 'flann.dll', 'libflann.dll', 'libflann.dylib']
+ 
+     for path in lib_paths:
+         for lib in possible_libs:
+             if exists(join(path,lib)):
+                 return path
++    raise ValueError("couldn't find flann install")
+ 
+ setup(name='flann',
+       version='@FLANN_VERSION@',
