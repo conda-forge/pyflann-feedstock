@@ -17,10 +17,11 @@ build:
 
 requirements:
     build:
+        - cmake
+    host:
         - python
         - setuptools
         - flann {{ version }}
-        - cmake
     run:
         - python
         - flann {{ version }}
