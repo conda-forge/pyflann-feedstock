@@ -21,6 +21,7 @@ requirements:
         - cmake
     host:
         - python
+        - pip
         - setuptools
         - flann {{ version }}
     run:
