@@ -1,3 +1,5 @@
+set "CMAKE_GENERATOR=NMake Makefiles"
+
 cd src\python
 
 cmake . ^

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export CMAKE_GENERATOR="Unix Makefiles"
+
 # python source is bundled with flann source
 cd src/python
 cmake . \
